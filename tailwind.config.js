@@ -10,7 +10,7 @@ export default {
         tertiary: "#76CD95",
         "green-100": "#2C6272",
         "green-200": "#257D87",
-        "white-100": "#2C9893",
+        "white-100": "#4AB397",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
@@ -20,6 +20,7 @@ export default {
       },
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",
+        "my-pattern": "url('/src/assets/endless-constellation.png')",
       },
     },
   },
