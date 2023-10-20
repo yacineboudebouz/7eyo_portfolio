@@ -50,7 +50,6 @@ const Navbar = () => {
                   <a href={`#${link.id}`} >{link.title}</a>
                 </li>
               ))}
-
             </ul>
           </div>
         </div>
