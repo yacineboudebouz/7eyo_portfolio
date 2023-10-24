@@ -4,9 +4,9 @@ import { OrbitControls, Preload, useGLTF } from '@react-three/drei'
 import CanvasLoader from '../Loader'
 
 
-const Computers = () => {
-
-  const computer = useGLTF('./public/android_bug/scene.gltf')
+const Androids = (isMobile) => {
+  console.log(isMobile);
+  const android = useGLTF('./public/android_bug/scene.gltf')
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
@@ -18,17 +18,30 @@ const Computers = () => {
         castShadow
         shadow-mapSize={1024}
       />
-      <primitive object={computer.scene} scale={2}
+      <primitive object={android.scene} scale={isMobile ? 1.5 : 2}
         position={[0, -3.25, -1.5]}
 
       />
-
-
     </mesh>
   )
 }
 
-const ComputersCanvas = () => {
+const AndroidCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 600px)')
+    setIsMobile(mediaQuery.matches);
+
+    const hendleMediaQuery = (e) => {
+      setIsMobile(e.matches);
+    }
+    mediaQuery.addEventListener('change', hendleMediaQuery)
+
+    return () => {
+      mediaQuery.removeEventListener('change', hendleMediaQuery)
+    }
+
+  }, [])
   return (
     <Canvas frameloop='demand'
       shadows camera={{ position: [20, 3, 5], fov: 25 }}
@@ -36,7 +49,7 @@ const ComputersCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
-        <Computers />
+        <Androids isMobile={isMobile} />
 
       </Suspense>
       <Preload all />
@@ -45,4 +58,4 @@ const ComputersCanvas = () => {
   )
 }
 
-export default ComputersCanvas
+export default AndroidCanvas
