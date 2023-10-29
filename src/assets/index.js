@@ -30,7 +30,14 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
+import laravel from "./tech/laravel.png";
+import flutter from "./tech/flutter.png";
+import kotlin from "./tech/kotlin.png";
+
 export {
+  laravel,
+  flutter,
+  kotlin,
   logo,
   backend,
   creator,

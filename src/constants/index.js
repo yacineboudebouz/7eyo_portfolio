@@ -23,6 +23,9 @@ import {
   jobit,
   tripguide,
   threejs,
+  laravel,
+  flutter,
+  kotlin,
 } from "../assets";
 
 export const navLinks = [
@@ -42,20 +45,16 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
-    icon: web,
+    title: "Php Laravel Developer",
+    icon: laravel,
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "Flutter Developer",
+    icon: flutter,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
+    title: "Kotlin Developer",
+    icon: kotlin,
   },
 ];
 
