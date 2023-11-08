@@ -1,25 +1,15 @@
 import {
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
   git,
   figma,
-  docker,
   carrent,
   jobit,
   tripguide,
-  threejs,
   laravel,
   flutter,
   kotlin,
   estin,
   upwork,
+  mysql,
 } from "../assets";
 
 export const navLinks = [
@@ -54,45 +44,18 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "Flutter",
+    icon: flutter,
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "Kotlin",
+    icon: kotlin,
   },
   {
-    name: "JavaScript",
-    icon: javascript,
+    name: "Laravel",
+    icon: laravel,
   },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
+
   {
     name: "git",
     icon: git,
@@ -102,8 +65,8 @@ const technologies = [
     icon: figma,
   },
   {
-    name: "docker",
-    icon: docker,
+    name: "mysql",
+    icon: mysql,
   },
 ];
 
