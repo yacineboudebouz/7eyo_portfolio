@@ -7,6 +7,10 @@ import { SketchCanvas } from './canvas'
 import { SectionWrapper } from '../hoc'
 import { slideIn } from '../utils/motion'
 
+
+// service_kn781vr
+// template_et6d9lo
+// -_HoHk0-cf_jJzagd
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -15,8 +19,38 @@ const Contact = () => {
     message: '',
   })
   const [loading, setLoading] = useState(false)
-  const handleChange = (e) => { }
-  const handleSubmit = (e) => { }
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send("service_kn781vr",
+      "template_et6d9lo",
+      {
+        from_name: form.name,
+        to_name: "Abdelhai",
+        from_email: form.email,
+        to_email: "yacineboud6@gmail.com",
+        message: form.message
+      }, "-_HoHk0-cf_jJzagd").then(() => {
+        setLoading(false);
+        alert("Thank you");
+        setForm({ name: "", email: "", message: "" })
+      }, (error) => {
+        setLoading(false)
+        console.log(error)
+        alert("something went wrong !")
+      })
+  }
   return (
     <div className=' xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
       <motion.div variants={slideIn('left', 'tween', 0.2, 1)}
@@ -28,6 +62,7 @@ const Contact = () => {
           ref={formRef}
           onSubmit={handleSubmit}
           className=' mt-12 flex flex-col gap-8'
+
         >
           <label className=' flex flex-col'>
             <span className=' text-white font-medium mb-4'>Your Name</span>
