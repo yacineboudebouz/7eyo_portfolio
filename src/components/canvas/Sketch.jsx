@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Earth = () => {
+const Sketch = () => {
   return (
     <div>Earth</div>
   )
 }
 
-export default Earth
+export default Sketch
